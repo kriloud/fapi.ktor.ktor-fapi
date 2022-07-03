@@ -82,7 +82,7 @@ val OK = "204"
                         +"Hello from $name!"
                     }
                     div {
-                        +"Created by finderfailoff!"
+                        +"Created by finderfailoff"
                     }
                     div {
                         +"REST API on Kotlin (Ktor) with Frontend HTML."

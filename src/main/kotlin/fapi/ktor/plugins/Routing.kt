@@ -13,18 +13,53 @@ fun Application.configureRouting() {
 val OK = "204"
     // Starting point for a Ktor app:
     routing {
-        get("/") {
-            call.respondText("Hello World! Fapi 0.0.2")
-        }
-    }
-    routing {
         get("/info") {
             call.respondText("Kotlin 1.6.21\nKtor 1.6.21")
         }
     }
     routing {
-        get("/help") {
-            call.respondText("/\n/info\n/help\n/text\n/user\n/test\n")
+        get("/") {
+            val name = "Fapi v 0.0.4"
+            call.respondHtml(HttpStatusCode.OK) {
+                head {
+                    title {
+                        +name
+                    }
+                }
+                body {
+                    h1 {
+                        +"Welcome to $name!"
+                    }
+                    div {
+                        +"Created by finderfailoff"
+                    }
+                    div {
+                        +"REST API on Kotlin (Ktor) with Frontend HTML."
+                        +" its help list"
+                    }
+                    div {
+                        +" INFO I specifically added html to my api server to make a help page because the one that is now difficult to find (it is not the main page!"
+                    }
+                    h2 {
+                        +"/ - its main page (your now here)"
+                    }
+                    h2 {
+                        +"/info - API version of info page"
+                    }
+                    h2 {
+                        +"/text - testing html page in rest api"
+                    }
+                    h2 {
+                        +"/user - list of registered users (experementaly, base from MTA and CrM3 servers)"
+                    }
+                    h2 {
+                        +"/test - API version of testing page"
+                    }
+                    h2 {
+                        +"/html - html page on rest api"
+                    }
+                }
+            }
         }
     }
     routing {

@@ -70,7 +70,7 @@ val OK = "204"
     }
     routing {
         get("/html") {
-            val name = "Fapi v 0.0.3"
+            val name = "Fapi v 0.0.4"
             call.respondHtml(HttpStatusCode.OK) {
                 head {
                     title {

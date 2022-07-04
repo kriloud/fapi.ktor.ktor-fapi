@@ -99,6 +99,11 @@ val OK = "204"
         }
     }
     routing {
+        get("/user/6"){
+            call.respondText("[\n {\n  id: 6\n  username: Unasha\n  status: \n  key_type: LEGACY\n  suspend: \n }\n]")
+        }
+    }
+    routing {
         get("/test"){
             call.respondText(OK)
         }

@@ -19,7 +19,7 @@ val OK = "204"
     }
     routing {
         get("/") {
-            val name = "Fapi v 0.0.4"
+            val name = "Fapi v 0.0.5"
             call.respondHtml(HttpStatusCode.OK) {
                 head {
                     title {
@@ -38,7 +38,7 @@ val OK = "204"
                         +" its help list"
                     }
                     div {
-                        +" INFO I specifically added html to my api server to make a help page because the one that is now difficult to find (it is not the main page!"
+                        +" INFO I specifically added html to my api server to make a help page because the one that is now difficult to find (it is not the main page!)"
                     }
                     h2 {
                         +"/ - its main page (your now here)"
@@ -85,7 +85,7 @@ val OK = "204"
     }
     routing {
         get("/user/3"){
-            call.respondText("[\n {\n  id: 3\n  username: ponychan\n  status: partner\n  key_type: NEW\n  suspend: indefinite\n }\n]")
+            call.respondText("[\n {\n  id: 3\n  username: ponychan\n  status: \n  key_type: NEW\n  suspend: indefinite\n }\n]")
         }
     }
     routing {
@@ -109,8 +109,19 @@ val OK = "204"
         }
     }
     routing {
+        get("/error"){
+            call.respondHtml(HttpStatusCode.ExpectationFailed){
+                body {
+                    div {
+                        +"HttpStatusCode.ExpectationFailed"
+                    }
+                }
+            }
+        }
+    }
+    routing {
         get("/html") {
-            val name = "Fapi v 0.0.4"
+            val name = "Fapi v 0.0.5"
             call.respondHtml(HttpStatusCode.OK) {
                 head {
                     title {
